@@ -1,7 +1,5 @@
 <?php
-
 /*
-Template name: Gabarit contact
+Template Name: Gabarit team
 */
-
 ?>

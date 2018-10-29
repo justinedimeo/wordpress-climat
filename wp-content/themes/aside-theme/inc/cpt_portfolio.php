@@ -1,25 +1,25 @@
 <?php
+add_action( 'init', 'ajout_custom_type_porfolio' );
 
-add_action( 'init', 'ajout_custom_type_portfolio' );
-function ajout_custom_type_portfolio()
+function ajout_custom_type_porfolio()
 {
 
-    $post_type = "portfolio";
-    $labels = array(
-            'name'               => 'Portfolios',
-            'singular_name'      => 'Portfolio',
-            'all_items'          => 'Tous les portfolios',
-            'add_new'            => 'Ajouter un portfolio',
-            'add_new_item'       => 'Ajouter un portfolio',
-            'edit_item'          => 'Editer le portfolio',
-            'new_item'           => 'Nouveau portfolio',
-            'view_item'          => 'Voir portfolio',
-            'search_items'       => 'Trouver un portfolio',
-            'not_found'          => 'Pas de résultat',
-            'not_found_in_trash' => 'Pas de résultat',
-            'parent_item_colon'  => 'Portfolio parent',
-            'menu_name'          => 'Portfolio',
-        );
+$post_type = "portfolio";
+$labels = array(
+        'name'               => 'Portfolios',
+        'singular_name'      => 'Portfolio',
+        'all_items'          => __("All portfolio",'aside'),
+        'add_new'            => __("Add portfolio",'aside'),
+        'add_new_item'       => __("Add portfolio",'aside'),
+        'edit_item'          => __("Edit portfolio",'aside'),
+        'new_item'           => __("New portfolio",'aside'),
+        'view_item'          => __("Read portfolio",'aside'),
+        'search_items'       => __("Search portfolio",'aside'),
+        'not_found'          => __("No result",'aside'),
+        'not_found_in_trash' => __("No result",'aside'),
+        'parent_item_colon'  => __("portfolio parent",'aside'),
+        'menu_name'          => 'Portfolio',
+    );
 
     $args = array(
         'labels'              => $labels,
@@ -39,16 +39,16 @@ function ajout_custom_type_portfolio()
         'rewrite'             => array( 'slug' => $post_type )
     );
 
-    register_post_type($post_type, $args );
+  register_post_type($post_type, $args );
 
-    $taxonomy = "theme";
-    $object_type = array("portfolio");
-    $args = array(
-        'label' => __('Thématique'),
-        'rewrite' => array('slug' => 'theme'),
-        'hierarchical' => true,
-    );
 
-    register_taxonomy($taxonomy, $object_type, $args);
+  $taxonomy = "theme";
+  $object_type = array("portfolio");
+  $args = array(
+          'label' => __( 'Thématique' ),
+          'rewrite' => array( 'slug' => 'theme' ),
+          'hierarchical' => true,
+  );
+  register_taxonomy( $taxonomy, $object_type, $args );
 
 }

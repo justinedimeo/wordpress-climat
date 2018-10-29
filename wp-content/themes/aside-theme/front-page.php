@@ -1,13 +1,11 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
 <main role="main" class="probootstrap-main js-probootstrap-main">
-
   <div class="card-columns">
-
     <?php
-    $args = array(
+    $args =  array(
       'post_type' => 'portfolio',
-      'posts_per_page' => -1
+      'posts_per_page' => 6
     );
     $the_query = new WP_Query( $args );
     if($the_query-> have_posts())
@@ -16,7 +14,7 @@
       {
         $the_query-> the_post();
       ?>
-      <div class="card">
+      <div class="card  img-loaded">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
         <?php the_post_thumbnail( 'portfolio-thumb', array(
           'class' =>"card-img-top probootstrap-animate",
@@ -26,117 +24,17 @@
       </div>
       <?php
       }
+
     }
     else{
-        echo"Pas d'item dans le portfolio";
+      echo __( "No item on portfolio", 'aside' );
     }
      wp_reset_postdata();
     ?>
-    <!--
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_2.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_3.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_4.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_5.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_6.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_7.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_8.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_9.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_10.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_11.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_12.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_13.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_14.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_15.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_16.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_17.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_18.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_19.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_20.jpg" alt="Card image cap">
-      </a>
-    </div>
-    <div class="card">
-      <a href="single.html">
-        <img class="card-img-top probootstrap-animate" src="images/img_21.jpg" alt="Card image cap">
-      </a>
-    </div>
-
-  -->
   </div>
-
+  <div>
+    <a href="#" class="readMore" data-page="1" title="<?php _e("Read more", "aside"); ?>"><?php _e("Read more", "aside"); ?></a>
+  </div>
   <div class="container-fluid d-md-none">
     <div class="row">
       <div class="col-md-12">
@@ -145,7 +43,8 @@
           <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
           <li><a href="#" class="p-2"><span class="icon-dribbble"></span></a></li>
         </ul>
-        <p>&copy; 2017 <a href="https://uicookies.com/" target="_blank">uiCookies:Aside</a>. <br> All Rights Reserved. Designed by <a href="https://uicookies.com/" target="_blank">uicookies.com</a></p>
+        <p>&copy; 2017 <a href="https://uicookies.com/" target="_blank">uiCookies:Aside</a>. <br>
+          <?php _e('All Rights Reserved. Designed by <a href="https://uicookies.com/" target="_blank">uicookies.com</a>', "aside"); ?> </p>
       </div>
     </div>
   </div>
