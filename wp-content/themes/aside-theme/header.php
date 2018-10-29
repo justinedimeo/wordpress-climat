@@ -5,7 +5,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
     <!-- Appel du fichier style.css de notre thème -->
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+    <link rel="stylesheet" href="<?php get_stylesheet_uri(); ?>">
 
     <!--
             Tout le contenu de la partie head de mon site
