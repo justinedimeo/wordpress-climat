@@ -17,10 +17,12 @@
         $the_query-> the_post(); ?>
       <li><img src="wp-content/themes/test/assets/img/bg0<?php if( get_field('numero_de_chapitre') ): the_field('numero_de_chapitre'); endif;?>.png" height="300"
           width="900" alt="" class="slider-43" title="bg02" />
-        <div class="caption-wrap">
+        <div class="card">
           <div class="caption">
-            <?php the_title(); ?>
-            <?php the_content();?>
+            <h3>Chapitre <?php if( get_field('numero_de_chapitre') ): the_field('numero_de_chapitre'); endif;?></h3>
+            <h1><?php the_title(); ?></h1>
+            <p><?php the_content();?></p>
+            <a href="#">Découvrir</a>
           </div>
         </div>
       </li>
