@@ -2,6 +2,8 @@
 Or bleu is a school project we made for Hetic. We had to do a wordpress website about climate ✨. 
 http://acoustik.world/
 
+
+:) 
 ---
 
 ## Technos 🚀
