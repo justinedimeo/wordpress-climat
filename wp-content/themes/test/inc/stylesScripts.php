@@ -28,7 +28,7 @@ wp_enqueue_script('responsiveslides.min');
 wp_register_script('script', JS_URL . '/script.js', array('jquery'),'1.0', true);
 wp_enqueue_script('script');
 
-wp_register_script('main', JS_URL . '/main.js');
+wp_register_script('main', JS_URL . '/main.js', array('jquery'),'1.0', true);
 wp_enqueue_script('main');
 
 }
