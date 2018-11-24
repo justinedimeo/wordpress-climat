@@ -27,7 +27,7 @@ $labels = array(
         'show_ui'             => true,
         'show_in_menu'        => true,
         'menu_position'       => 5,
-        'menu_icon'           => 'dashicons-admin-users',
+        'menu_icon'           => 'dashicons-format-aside',
         'show_in_nav_menus'   => true,
         'publicly_queryable'  => true,
         'exclude_from_search' => false,
@@ -39,12 +39,12 @@ $labels = array(
 
     register_post_type($post_type, $args );
 
-    $taxonomy = 'profil';
-    $object_type = array('team');
-    $args = array(
-        'label' => __( 'Profil' ),
-        'rewrite' => array( 'slug' => 'profil' ),
-        'hierarchical' => true,
-    );
-    register_taxonomy( $taxonomy, $object_type, $args );
+    // $taxonomy = 'profil';
+    // $object_type = array('team');
+    // $args = array(
+    //     'label' => __( 'Profil' ),
+    //     'rewrite' => array( 'slug' => 'profil' ),
+    //     'hierarchical' => true,
+    // );
+    // register_taxonomy( $taxonomy, $object_type, $args );
 }

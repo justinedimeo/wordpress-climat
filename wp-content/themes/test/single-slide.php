@@ -264,14 +264,17 @@
                     </g>
                 </g>
             </svg>
-            <span class="one-line">L'eau en quelques mots</span>
+            <span class="one-line">
+                <?php the_field('premier_titre'); ?></span>
         </div>
-        <span class="discover-text">Découvrir l’or bleu en vidéo</span>
-        <div class="part-text first">5 millions, c’est le nombre de personnes décédées chaque années dus à un accès
-            insuffisant à l’eau. Découvrez en plus dans cette vidéo explicative.</div>
+        <div class="part-text first">
+            <?php the_field('premier_paragraphe'); ?>
+        </div>
+        <?php if( get_field('video') ):?>
         <div class="embed-container">
             <?php the_field('video'); ?>
         </div>
+        <?php endif;?>
         <div class="title-part second">
             <svg class="brush" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 626 102" style="enable-background:new 0 0 626 102;" xml:space="preserve">
@@ -510,43 +513,39 @@
                     </g>
                 </g>
             </svg>
-            <span class="two-lines">L’évolution de la répartition<br />de l’eau potable</span>
+            <span class="two-lines">
+                <?php the_field('deuxieme_titre'); ?></span>
         </div>
-        <div class="part-text second">L’humanité utilise une quantité d’eau grandissante, parfois à un rythme
-            approchant ou supérieur au taux de renouvellement des stocks. Bien que globalement le volume d’eau sur
-            Terre soit constant, les problèmes surviennent parce que l’eau devient inaccessible, les sources d’eau
-            potable diminuent ou se tarissent, mettant ainsi les régions en état de stress hydrique. </div>
+        <div class="part-text second">
+            <?php the_field('deuxieme_paragraphe'); ?>
+        </div>
+        <?php
+    $args = array( 'chapitre' => 'chapitre1' );
+    $the_query = new WP_Query( $args );
+    if($the_query-> have_posts())
+    {
+      while($the_query-> have_posts())
+      {
+        $the_query-> the_post(); ?>
         <div class="bar-container">
             <div class="container">
-                <div class="bar bar1"></div>
+                <div style="height:<?php the_field('pourcentage'); ?>%;" class="bar bar<?php the_field('numero_data'); ?>"></div>
             </div>
             <div class="text-container first">
-                <div class="first-text">Géants de l'eau</div>
-                <div class="number">60%</div>
-                <div class="text">des ressources naturelles d’eau douce sont partagées entre 9 pays. Le monde en compte
-                    197.</div>
+                <div class="first-text"><?php the_title()?></div>
+                <div class="number"><?php the_field('pourcentage'); ?>%</div>
+                <div class="text"><?php the_content()?></div>
             </div>
         </div>
-        <div class="bar-container">
-            <div class="container">
-                <div class="bar bar2"></div>
-            </div>
-            <div class="text-container second">
-                <div class="first-text">Inaccessible</div>
-                <div class="number">10%</div>
-                <div class="text">de le population mondiale n’a pas accès à l’eau potable. Soit 748 millions d’humains.</div>
-            </div>
-        </div>
-        <div class="bar-container">
-            <div class="container">
-                <div class="bar bar3"></div>
-            </div>
-            <div class="text-container second">
-                <div class="first-text">Course contre la montre</div>
-                <div class="number">5 personnes</div>
-                <div class="text">meurent toutes les minutes parce qu'ils n'ont pas accès à l'eau potable.</div>
-            </div>
-        </div>
+        <?
+      }
+
+    }
+    else{
+      echo __( "No data", 'test' );
+    }
+     wp_reset_postdata();
+    ?>
     </main>
 </body>
 
