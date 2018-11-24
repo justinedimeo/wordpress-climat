@@ -102,6 +102,7 @@ header {
   width: 100%;
   height: 55vh;
   padding-top: 40vh;
+  padding-bottom: 7vh;
   position: relative;
   text-align: center;
   /* background-image: url(../img/bg01.png); */
@@ -236,7 +237,7 @@ main > .part-text {
 }
 
 main > .part-text.second {
-  margin-top: 230px;
+  margin-top: 130px;
 }
 
 main > .video {
@@ -342,6 +343,10 @@ main > .bar-container {
 }
 
 @media (max-width: 400px) {
+  .card{
+    right: 5%;
+  }
+
   header > h1 {
     font-size: 40px;
   }
@@ -351,12 +356,28 @@ main > .bar-container {
   }
 
   main {
-    padding-top: 2vh;
+    padding-top: 5vh;
   }
 
   main > .title-part.first {
     margin-top: 10px;
     margin-bottom: 60px;
+  }
+
+  .title-part > span {
+    width: 110%;
+  }
+
+  main > .title-part {
+    margin-bottom: 10vh;
+  }
+
+  main > .title-part.second {
+    margin-top: 7vh;
+  }
+
+  main > .part-text.second {
+    margin-top: 18vh;
   }
 
   .title-part > .one-line {
@@ -369,6 +390,10 @@ main > .bar-container {
 
   .title-part > span {
     font-size: 18px;
+  }
+
+  .title-part > .brush {
+    width: 114%;
   }
 
   main > .discover-text {

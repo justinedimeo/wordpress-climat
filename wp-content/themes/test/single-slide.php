@@ -272,7 +272,7 @@
         <div class="embed-container">
             <?php the_field('video'); ?>
         </div>
-        <div class="title-part">
+        <div class="title-part second">
             <svg class="brush" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 626 102" style="enable-background:new 0 0 626 102;" xml:space="preserve">
                 <style type="text/css">
