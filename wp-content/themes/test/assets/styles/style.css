@@ -246,20 +246,96 @@ main > .part-text.second {
   margin-top: 130px;
 }
 
-main > .video {
-  width: 70vw;
-  height: 70vh;
-  margin-top: 50px;
-  margin-left: 15%;
-  background-color: #fefefe;
-  margin-bottom: 100px;
+main > .buttons{
+  margin-bottom: 2vh;
+  margin-top: 7vh;
+}
+
+main > .buttons > .button {
+  font-family: Proxima Nova;
+  color: rgb(144, 144, 144);
+  padding: 5px 15px;
+  border: solid rgb(144, 144, 144) 1px;
+  border-radius: 4px;
+  margin: 0 15px;
+}
+
+main > .buttons > .button.active{
+  color: #FFF;
+  border: solid #FFF 1px;
+}
+
+main > .buttons > .first-circle{
+  display: none;
+  transition: ease-in-out 1s;
+  height: 180px;
+  width: 180px;
+  vertical-align: center;
+  border-radius: 150px;
+  background: #051421;
+  padding: 20px;
+  position: relative;
+  margin: 20px auto;
+}
+
+main > .buttons > .first-circle > .second-circle{
+  height: 140px;
+  width: 140px;
+  margin: auto;
+  border-radius: 150px;
+  background: #0B2034;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+main > .buttons > .first-circle > .second-circle > .third-circle{
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border-radius: 150px;
+  background: #3D87F0;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0px 2px 5px rgba(61, 136, 240, 0.253);
+}
+
+main > .buttons > .first-circle.active{
+  display: block;
+  transition: ease-in-out 1s;
+}
+
+main > .buttons > .first-circle > .second-circle > .third-circle > .button-text{
+  color: #FFF;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 30px;
+  margin-top: -2vh;
+}
+
+main > .buttons > .first-circle > .second-circle > .third-circle > p{
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-weight: 200;
+  font-size: 13px;
+  margin-top: -4vh;
+}
+
+main > .buttons > .button:hover {
+  cursor: pointer;
+}
+
+main > .class{
+  display: none;
 }
 
 main > .bar-container {
   width: 300px;
   height: auto;
   display: inline-block;
-  margin-top: 70px;
+  margin-top: 45px;
   margin-bottom: 50px;
   margin-left: 7%;
 }

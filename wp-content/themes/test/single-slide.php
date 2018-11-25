@@ -264,8 +264,7 @@
                     </g>
                 </g>
             </svg>
-            <span class="one-line">
-                <?php the_field('premier_titre'); ?></span>
+            <span class="one-line"><?php the_field('premier_titre'); ?></span>
         </div>
         <div class="part-text first">
             <?php the_field('premier_paragraphe'); ?>
@@ -275,6 +274,7 @@
             <?php the_field('video'); ?>
         </div>
         <?php endif;?>
+
         <div class="title-part second">
             <svg class="brush" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 626 102" style="enable-background:new 0 0 626 102;" xml:space="preserve">
@@ -516,25 +516,87 @@
             <span class="two-lines">
                 <?php the_field('deuxieme_titre'); ?></span>
         </div>
+
         <div class="part-text second">
             <?php the_field('deuxieme_paragraphe'); ?>
         </div>
+
+        <div class="buttons">
+            <?php
+            $chapitre = "chapitre";
+            $numero = get_field("numero_de_chapitre");
+            $numchap = $chapitre . $numero;
+            $args =  array(
+              'post_type' => 'button',
+              'posts_per_page' => 6,
+              'chapitre-button' => $numchap
+            );
+            $the_query = new WP_Query( $args );
+            if($the_query-> have_posts())
+            { 
+                while($the_query-> have_posts())
+              { $the_query-> the_post(); ?>
+            <span class="button <?php the_field('classe'); ?>">
+                <?php the_title(); ?></span>
+            <?
+              }
+          
+            }
+            else{
+              echo __( "", 'test' );
+            }
+            if($the_query-> have_posts())
+            { 
+                while($the_query-> have_posts())
+              { $the_query-> the_post(); ?>
+              <div class="first-circle <?php the_field('classe'); ?>">
+                  <div class="second-circle">
+                      <div class="third-circle">
+                        <div class="button-text"><?php the_content(); ?></div>
+                        <p>de l'eau de la planète</p>
+                      </div>
+                  </div>
+              </div>
+            <?
+              }
+          
+            }
+            else{
+              echo __( "", 'test' );
+            }
+             wp_reset_postdata();
+        ?>
+        </div>
+
         <?php
-    $args = array( 'chapitre' => 'chapitre1' );
-    $the_query = new WP_Query( $args );
-    if($the_query-> have_posts())
-    {
-      while($the_query-> have_posts())
-      {
-        $the_query-> the_post(); ?>
-        <div class="bar-container">
+            $chapitre = "chapitre";
+            $numero = get_field("numero_de_chapitre");
+            $numchap = $chapitre . $numero;
+            $args =  array(
+                'post_type' => 'data',
+                'posts_per_page' => 6,
+                'chapitre' => $numchap
+              );
+            $the_query = new WP_Query( $args );
+            if($the_query-> have_posts())
+            {
+              while($the_query-> have_posts())
+              {
+                $the_query-> the_post(); ?>
+        <div class="class"><?php the_field('classe_particuliere'); ?></div>        
+        <div class="<?php the_field('classe_particuliere'); ?> bar-container">
             <div class="container">
                 <div style="height:<?php the_field('pourcentage'); ?>%;" class="bar bar<?php the_field('numero_data'); ?>"></div>
             </div>
             <div class="text-container first">
-                <div class="first-text"><?php the_title()?></div>
-                <div class="number"><?php the_field('pourcentage'); ?>%</div>
-                <div class="text"><?php the_content()?></div>
+                <div class="first-text">
+                    <?php the_title()?>
+                </div>
+                <div class="number">
+                    <?php the_field('pourcentage'); ?>%</div>
+                <div class="text">
+                    <?php the_content()?>
+                </div>
             </div>
         </div>
         <?
@@ -542,7 +604,7 @@
 
     }
     else{
-      echo __( "No data", 'test' );
+      echo __( "", 'test' );
     }
      wp_reset_postdata();
     ?>

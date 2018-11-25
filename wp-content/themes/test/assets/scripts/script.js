@@ -14,4 +14,30 @@
 
 	});
 
+	$('.button').on('click', function(e) {
+		$('.button').removeClass('active');
+		$('.first-circle.active').removeClass('active');
+		$(this).toggleClass('active');
+		i = $(this).index();
+		$('.first-circle:eq('+ i +')').addClass("active");
+		
+		var tableau = $('.bar-container');
+		var un = $(this).text();
+
+		var deux = $.trim(un.replace(/[\t\n]+/g,' '))
+		
+		for (var i=0; i<tableau.length; i++) {
+
+			console.log(deux == "Industrie");
+			if($('.bar-container:eq('+ i +')').hasClass(deux)){
+				$('.bar-container:eq('+ i +')').css('display', 'inline-block');
+			}else{
+				$('.bar-container:eq('+ i +')').css('display', 'none');
+			}
+		}
+
+		e.preventDefault();
+		// console.log($('.class').text());
+	});
+
 })(jQuery)
