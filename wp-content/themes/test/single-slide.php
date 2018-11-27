@@ -282,6 +282,43 @@
         </div>
         <?php endif;?>
 
+        <!-- ILLUSTRATION -->
+        <?php
+        $chapitre = "chapitre";
+        $numero = get_field("numero_de_chapitre");
+        $numchap = $chapitre . $numero;
+        $args =  array(
+          'post_type' => 'illustration',
+          'posts_per_page' => 1,
+          'chapitre-illu' => $numchap
+        );
+        $the_query = new WP_Query( $args );
+        if($the_query-> have_posts())
+        {
+          while($the_query-> have_posts())
+          {
+            $the_query-> the_post();
+        
+        $image = get_field('illustration');
+        if( !empty($image) ): ?>
+        <div class="illustration">
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+            <div class="texte">
+                <h3><?php the_title(); ?></h3>
+                <p><?php the_content(); ?></p>
+            </div>
+        </div>
+        <?php endif; ?>
+
+        <?
+          }
+        }
+        else{
+          echo __( "", 'test' );
+        }
+         wp_reset_postdata();
+        ?>
+
         <!-- SECOND PART -->
         <div class="title-part second">
             <svg class="brush" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -531,9 +568,6 @@
         <!-- CUSTOM POST TYPE BUTTONS -->
         <div class="buttons">
             <?php
-            $chapitre = "chapitre";
-            $numero = get_field("numero_de_chapitre");
-            $numchap = $chapitre . $numero;
             $args =  array(
               'post_type' => 'button',
               'posts_per_page' => 6,
@@ -557,15 +591,17 @@
                 while($the_query-> have_posts())
               { $the_query-> the_post(); ?>
 
+              <!-- TEXTE -->
               <?php if( get_field('description')){?>
                 <p class="people-text part-text <?php the_field('classe'); ?>"><?php the_field('description'); ?></p>
               <?php } else{ ?>
-              <!-- CIRCLE -->
+
+              <!-- CERCLE -->
               <div class="first-circle <?php the_field('classe'); ?>">
                   <div class="second-circle">
                       <div class="third-circle">
                         <div class="button-text"><?php the_content(); ?></div>
-                        <p>de l'eau de la planète</p>
+                        <p><?php the_field('sous-titre'); ?></p>
                       </div>
                   </div>
               </div>
@@ -582,9 +618,6 @@
 
         <!-- CUSTOM POST TYPE DATA -->
         <?php
-            $chapitre = "chapitre";
-            $numero = get_field("numero_de_chapitre");
-            $numchap = $chapitre . $numero;
             $args =  array(
                 'post_type' => 'data',
                 'posts_per_page' => 6,

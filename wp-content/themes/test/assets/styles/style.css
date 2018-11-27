@@ -275,7 +275,9 @@ main > .buttons > .first-circle{
   background: #051421;
   padding: 20px;
   position: relative;
-  margin: 20px auto;
+  margin: auto;
+  margin-bottom: 0;
+  margin-top: 30px;
 }
 
 main > .buttons > .first-circle > .second-circle{
@@ -340,7 +342,7 @@ main > .buttons > .first-circle > .second-circle > .third-circle > p{
   color: #FFF;
   font-family: Proxima Nova;
   font-weight: 200;
-  font-size: 13px;
+  font-size: 10px;
   margin-top: -4vh;
 }
 
@@ -424,6 +426,41 @@ main > .bar-container {
   font-weight: 100;
   letter-spacing: 1px;
   line-height: 23px;
+}
+
+/* ILLUSTRATION */
+
+main > .illustration{
+  padding: 15vh 0;
+  vertical-align: middle;
+}
+
+main > .illustration >.texte{
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+  width: 25%;
+  padding: 3vh 4vw;
+  font-family: Proxima Nova;
+  color: #000;
+  text-align: left;
+}
+
+main > .illustration >.texte h3{
+  font-weight: 400;
+  font-size: 25px;
+}
+
+main > .illustration >.texte p{
+  font-weight: 200;
+  font-size: 15px;
+  line-height: 23px;
+}
+
+main > .illustration > img{
+  width: 48vw;
+  margin-top: 5%;
+  /* margin-right: -4%; */
 }
 
 /* RESPONSIVE */
@@ -548,6 +585,19 @@ main > .bar-container {
     width: 70%;
     margin: 25px auto;
   }
+
+  main > .illustration{
+    padding: 3vh 0vw;
+  }
+
+  main > .illustration >.texte{
+    width: 65%;
+    margin-top: 4vh;
+  }
+
+  main > .illustration >img{
+    width: 70vw;
+  }
 }
 
 /* VIDEO FRAME */
@@ -569,4 +619,45 @@ main > .bar-container {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* 404 */
+
+.page-erreur{
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: #E4F0FB;
+}
+
+.page-erreur .image{
+  width: 40vw;
+  height: 65vh;
+  margin: auto;
+  background-image: url('../img/erreur.png');
+  background-size: cover;
+  margin-top: -5vh;
+}
+
+.page-erreur h1{
+  margin-top: 0;
+  font-family: Proxima Nova;
+  color: #17335A;
+  padding-top: 5vh;
+}
+
+.page-erreur p, .page-erreur a {
+  font-family: Proxima Nova;
+  color: #17335A;
+}
+
+.page-erreur a {
+  text-transform: uppercase;
+}
+
+/* FOOTER */
+
+footer{
+  height: 10vh;
+  background-color: #031B27;
 }

@@ -42,7 +42,7 @@
 
     }
     else{
-      echo __( "No item", 'test' );
+      echo __( "", 'test' );
     }
      wp_reset_postdata();
     ?>
