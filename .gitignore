@@ -12,5 +12,5 @@
 !wp-content/mu-plugins
 !wp-content/mu-plugins/**
 
-# Ignore Mac DS_Store files
+# Ignore Mac / Apple DS_Store files
 .DS_Store
