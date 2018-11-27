@@ -1,3 +1,5 @@
+/* FONTS */
+
 @font-face {
   font-family: 'Proxima Nova';
   src: url('../fonts/ProximaNova-Thin.otf');
@@ -47,15 +49,17 @@
   src: url('../fonts/FredokaOne-Regular.ttf');
 }
 
+/* BODY */
+
 body {
-  /* background: rgb(40, 155, 231); */
   color: #007BF5;
   margin: 0px;
 }
 
+/* FRONT PAGE */
+
 .card{
   width: 21rem;
-  /* height: 21rem; */
   background: #fff;
   border-radius: 2rem;
   padding-left: 1.6rem;
@@ -94,9 +98,7 @@ body {
 
 /* SINGLE PAGE */
 
-/*********
-  HEADER
-**********/
+/* HEADER */
 
 header {
   width: 100%;
@@ -105,7 +107,6 @@ header {
   padding-bottom: 7vh;
   position: relative;
   text-align: center;
-  /* background-image: url(../img/bg01.png); */
 }
 
 header > img {
@@ -170,9 +171,7 @@ header > .title-text {
   font-family: Proxima Nova;
 }
 
-/*********
-   MAIN
-**********/
+/* MAIN */
 
 main {
   width: 100%;
@@ -391,6 +390,8 @@ main > .bar-container {
   line-height: 23px;
 }
 
+/* RESPONSIVE */
+
 @media (max-width: 900px) {
   main > .title-part {
     width: 60%;
@@ -504,6 +505,12 @@ main > .bar-container {
 
   .text-container > .text {
     font-size: 16px;
+  }
+
+  main > .buttons > .button {
+    display: block;
+    width: 70%;
+    margin: 25px auto;
   }
 }
 

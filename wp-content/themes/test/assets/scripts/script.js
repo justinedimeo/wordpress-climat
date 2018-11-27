@@ -28,7 +28,6 @@
 		
 		for (var i=0; i<tableau.length; i++) {
 
-			console.log(deux == "Industrie");
 			if($('.bar-container:eq('+ i +')').hasClass(deux)){
 				$('.bar-container:eq('+ i +')').css('display', 'inline-block');
 			}else{

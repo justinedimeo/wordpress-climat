@@ -1,5 +1,5 @@
-<?php get_header(); //appel du template header.php  ?>
+<?php get_header(); ?>
 
-<p>index ??</p>
+<p>page</p>
 
-<?php get_footer(); //appel du template footer.php ?>
+<?php get_footer(); ?>

@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
 <body>
+
+    <!-- HEADER -->
     <header style="background-image:<?php 
         $image = get_field('background');
         if( !empty($image) ): ?> url(<?php echo $image['url']; ?>)<?php endif; ?>">
@@ -25,7 +27,10 @@
             ?>
         </div>
     </header>
+
+    <!-- MAIN SECTION -->
     <main>
+        <!-- FIRST PART -->
         <div class="title-part">
             <svg class="brush" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 626 102" style="enable-background:new 0 0 626 102;" xml:space="preserve">
@@ -269,12 +274,15 @@
         <div class="part-text first">
             <?php the_field('premier_paragraphe'); ?>
         </div>
+
+        <!-- VIDEO -->
         <?php if( get_field('video') ):?>
         <div class="embed-container">
             <?php the_field('video'); ?>
         </div>
         <?php endif;?>
 
+        <!-- SECOND PART -->
         <div class="title-part second">
             <svg class="brush" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 626 102" style="enable-background:new 0 0 626 102;" xml:space="preserve">
@@ -516,11 +524,11 @@
             <span class="two-lines">
                 <?php the_field('deuxieme_titre'); ?></span>
         </div>
-
         <div class="part-text second">
             <?php the_field('deuxieme_paragraphe'); ?>
         </div>
 
+        <!-- CUSTOM POST TYPE BUTTONS -->
         <div class="buttons">
             <?php
             $chapitre = "chapitre";
@@ -549,6 +557,8 @@
             { 
                 while($the_query-> have_posts())
               { $the_query-> the_post(); ?>
+
+              <!-- CIRCLE -->
               <div class="first-circle <?php the_field('classe'); ?>">
                   <div class="second-circle">
                       <div class="third-circle">
@@ -568,6 +578,7 @@
         ?>
         </div>
 
+        <!-- CUSTOM POST TYPE DATA -->
         <?php
             $chapitre = "chapitre";
             $numero = get_field("numero_de_chapitre");
@@ -583,11 +594,13 @@
               while($the_query-> have_posts())
               {
                 $the_query-> the_post(); ?>
-        <div class="class"><?php the_field('classe_particuliere'); ?></div>        
+                
         <div class="<?php the_field('classe_particuliere'); ?> bar-container">
             <div class="container">
                 <div style="height:<?php the_field('pourcentage'); ?>%;" class="bar bar<?php the_field('numero_data'); ?>"></div>
             </div>
+
+            <!-- BARS -->
             <div class="text-container first">
                 <div class="first-text">
                     <?php the_title()?>
