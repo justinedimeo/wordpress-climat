@@ -543,9 +543,8 @@
             if($the_query-> have_posts())
             { 
                 while($the_query-> have_posts())
-              { $the_query-> the_post(); ?>
-            <span class="button <?php the_field('classe'); ?>">
-                <?php the_title(); ?></span>
+                { $the_query-> the_post(); ?>
+            <span class="button <?php the_field('classe'); ?>"> <?php the_title(); ?> </span>
             <?
               }
           
@@ -558,6 +557,9 @@
                 while($the_query-> have_posts())
               { $the_query-> the_post(); ?>
 
+              <?php if( get_field('description')){?>
+                <p class="people-text part-text <?php the_field('classe'); ?>"><?php the_field('description'); ?></p>
+              <?php } else{ ?>
               <!-- CIRCLE -->
               <div class="first-circle <?php the_field('classe'); ?>">
                   <div class="second-circle">
@@ -567,7 +569,7 @@
                       </div>
                   </div>
               </div>
-            <?
+                <? }
               }
           
             }
@@ -594,7 +596,7 @@
               while($the_query-> have_posts())
               {
                 $the_query-> the_post(); ?>
-                
+
         <div class="<?php the_field('classe_particuliere'); ?> bar-container">
             <div class="container">
                 <div style="height:<?php the_field('pourcentage'); ?>%;" class="bar bar<?php the_field('numero_data'); ?>"></div>

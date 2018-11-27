@@ -17,9 +17,11 @@
 	$('.button').on('click', function(e) {
 		$('.button').removeClass('active');
 		$('.first-circle.active').removeClass('active');
+		$('.people-text.active').removeClass('active');
 		$(this).toggleClass('active');
 		i = $(this).index();
 		$('.first-circle:eq('+ i +')').addClass("active");
+		$('.people-text:eq('+ i +')').addClass("active");
 		
 		var tableau = $('.bar-container');
 		var un = $(this).text();
@@ -30,6 +32,7 @@
 
 			if($('.bar-container:eq('+ i +')').hasClass(deux)){
 				$('.bar-container:eq('+ i +')').css('display', 'inline-block');
+				$('.bar-container:eq('+ i +') .container .bar').css('animation', 'coucou 0.9s ease-in-out');
 			}else{
 				$('.bar-container:eq('+ i +')').css('display', 'none');
 			}

@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name : Slider
-*/
-?>
-
 <?php get_header(); ?>
 
 <div style="width: 100%;" class="ml-slider-3-10-0 metaslider metaslider-responsive metaslider-43 ml-slider ms-theme-blend has-dots-nav">

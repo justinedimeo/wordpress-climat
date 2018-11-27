@@ -246,7 +246,7 @@ main > .part-text.second {
 }
 
 main > .buttons{
-  margin-bottom: 2vh;
+  /* margin-bottom: 2vh; */
   margin-top: 7vh;
 }
 
@@ -256,7 +256,8 @@ main > .buttons > .button {
   padding: 5px 15px;
   border: solid rgb(144, 144, 144) 1px;
   border-radius: 4px;
-  margin: 0 15px;
+  margin: 10px 15px;
+  transition: ease-in-out 0.3s;
 }
 
 main > .buttons > .button.active{
@@ -307,6 +308,27 @@ main > .buttons > .first-circle.active{
   transition: ease-in-out 1s;
 }
 
+main > .buttons > .people-text{
+  display: none;
+  width: 60vw;
+  line-height: 25px;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  padding-bottom: 5vh;
+  margin-left: 20%;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-family: Proxima Nova;
+  font-weight: 200;
+}
+
+main > .buttons > .people-text.active{
+  display: block;
+}
+
+
 main > .buttons > .first-circle > .second-circle > .third-circle > .button-text{
   color: #FFF;
   font-family: 'Fredoka One', sans-serif;
@@ -344,12 +366,26 @@ main > .bar-container {
   width: 20px;
   height: 400px;
   border: 1px solid #0086F0;
+  position: relative;
 }
 
 .container > .bar {
   width: 20px;
   background-color: #0086F0;
-  transform: translateY(calc(400px - 100%));
+  /* transform: translateY(calc(400px - 100%)); */
+  position: absolute;
+  bottom: 0;
+  transform-origin: bottom;
+}
+
+@keyframes coucou {
+  0% {
+      transform: scaleY(0);
+  }
+
+  100% {
+      transform: scaleY(1);
+  }
 }
 
 .text-container {
